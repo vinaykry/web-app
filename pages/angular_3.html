@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+	<head>
+		<title>web-app</title>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+	</head>
+
+	<body>
+
+		<div ng-controller="myCtrl">
+			<p>Name:<input type="text" ng-model="fname"/></p>
+			<p>Name:<input type="text" ng-model="lname"/></p>
+			<h3>
+				Hello: {{fullname()}}
+			</h3>		
+		</div>
+
+		<script type="text/javascript">
+
+			var app = angular.module('myapp',[]);
+
+			app.controller('myCtrl', function($scope){
+				$scope.fname = "Vinay";
+				$scope.lname = "Kumar";
+				$scope.fullname = function(){
+					return $scope.fname + " " + $scope.lname;
+				}
+			});
+
+		</script>
+		
+	</body>
+</html>
+
